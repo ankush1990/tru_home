@@ -188,12 +188,13 @@ angular.module('starter.controllers', [])
 
 .controller('servicesCtrl', function($scope,$state,$window,$ionicPopup) {
 	$scope.gotodetail = function(val){
-		if(globaluserid != ""){
+		if(globaluserid != "" && globaluserid != null){
 			if(globalusertype == "C"){
 				$state.go('eventmenu.s_detail',{serviceid:val});
 			}
 		}
 		else{
+			console.log(globaluserid);
 			$ionicPopup.show({
 			  template: '',
 			  title: 'Please login first',
